@@ -1,0 +1,5 @@
+<h2>New Post</h2>
+<%= form_for :post, url: posts_path do |f| %>
+<p><%= f.text_field :task %></p>
+<p><%= f.submit %></p>
+<% end %>

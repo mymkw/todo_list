@@ -1,0 +1,5 @@
+<h2>My Task</h2>
+<p><%= link_to "Add new", new_post_path %></p>
+<% @posts.each do |post| %>
+	<p><%= post.task %></p>
+<% end %>
