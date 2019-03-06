@@ -1,5 +1,40 @@
-<h2>My Task</h2>
-<p><%= link_to "Add new", new_post_path %></p>
+<div class='normal'>
+
+<h2>
+My Tasks
+<%= link_to "Add new", new_post_path, class: 'new'%>
+</h2>
+
 <% @posts.each do |post| %>
-	<p><%= post.task %></p>
+	<% if post.done == 0 %>
+		<p class='notdone'>
+		<div class='box'>
+		<%= post.body %>
+		<br>
+		<%= link_to '[done]', post_complete_path(post) %>
+		<%= link_to '[x]', post_path(post),method: :delete%>
+		</div>
+		</p>
+	<% end %>
 <% end %>
+
+</div>
+
+<div class = 'complete'>
+
+<h3>Complete Tasks</h3>
+
+<% @posts.each do |post| %>
+	<% if post.done >= 1 %>
+		<p class='done'>
+		<div class='box'>
+		<%= post.body %>
+		<br>
+		<%= link_to '[undo]', post_incomplete_path(post) %>
+		<%= link_to '[x]', post_path(post),method: :delete%>
+		</div>
+		</p>
+	<% end %>
+<% end %>
+
+</div>

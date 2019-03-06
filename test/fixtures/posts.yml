@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  task: MyString
+  body: 
+  done: 1
+  name: 
 
 two:
-  task: MyString
+  body: 
+  done: 1
+  name: 
